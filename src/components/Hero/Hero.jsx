@@ -62,12 +62,15 @@ const Hero = () => {
                             className="col-xl-3 col-sm-6 mb-5 d-flex"
                             key={index}
                         >
-                            <div className=" cardBox bg-white rounded shadow-sm py-5 px-4">
-                                <img
-                                    src={element.img}
-                                    alt=""
-                                    className="img-fluid mb-3 img-thumbnail shadow-sm"
-                                />
+                            <div className="cardBox bg-white rounded shadow-sm py-5 px-4">
+                                <a href={element.website}>
+                                    <img
+                                        src={element.img}
+                                        alt=""
+                                        className="img-fluid mb-3 img-thumbnail shadow-sm"
+                                    />
+                                </a>
+
                                 <h5 className="mb-0">{element.title}</h5>
                                 <span className="small text-uppercase text-muted">
                                     {element.des}
