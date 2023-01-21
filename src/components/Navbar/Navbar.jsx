@@ -11,13 +11,15 @@ const Navbar = (props) => {
             props.onSaveTheme('light');
         }
     };
+
     return (
         <nav
             className={`navbar navbar-expand-lg ${
                 props.color === 'light'
                     ? 'bg-light navbar-light'
                     : 'bg-dark navbar-dark'
-            } `}>
+            } `}
+        >
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img className="w-50" src={logo} alt="" />
@@ -29,12 +31,14 @@ const Navbar = (props) => {
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Toggle navigation"
+                >
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div
                     className="collapse navbar-collapse"
-                    id="navbarSupportedContent">
+                    id="navbarSupportedContent"
+                >
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item ">
                             <div className="form-check form-switch d-flex align-items-center">
@@ -47,7 +51,8 @@ const Navbar = (props) => {
                                 />
                                 <a
                                     className="form-check-label nav-link active"
-                                    htmlFor="flexSwitchCheckDefault">
+                                    htmlFor="flexSwitchCheckDefault"
+                                >
                                     {props.color === 'light' ? 'Dark' : 'Light'}
                                 </a>
                             </div>
@@ -56,7 +61,8 @@ const Navbar = (props) => {
                             <a
                                 className="nav-link active"
                                 aria-current="page"
-                                href="#">
+                                href="#"
+                            >
                                 Home
                             </a>
                         </li>

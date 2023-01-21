@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Hero.css';
 
-const Hero = () => {
+const Hero = (props) => {
     const [index, setIndex] = useState(0);
     const [text, setText] = useState('');
     const [data, setData] = useState([]);
 
+    // The heading animation
     const [fullText, setFullText] = useState(
-        `WELCOME TO lokesh_vasnik PROJECT SECTION.`
+        `WELCOME TO lokesh_vasnik PROJECT SECTION.CLICK TO VIEW THE PROJECT`
     );
 
+    // Heading animation logic
     useEffect(() => {
         if (index < fullText.length) {
             const timeoutId = setTimeout(() => {
@@ -17,10 +19,13 @@ const Hero = () => {
                 setIndex(index + 1);
             }, 100);
 
-            return () => clearTimeout(timeoutId);
+            return () => {
+                clearTimeout(timeoutId);
+            };
         }
     }, [index]);
 
+    // Fetching data from backend api
     useEffect(() => {
         const getData = async () => {
             try {
@@ -50,11 +55,10 @@ const Hero = () => {
             <div className="container py-5">
                 <div className="row text-center text-white">
                     <div className="col-lg-8 mx-auto">
-                        <p className="lead mb-0">{text}</p>
+                        <p className="bg-dark lead mb-0">{text}</p>
                     </div>
                 </div>
             </div>
-
             <div className="container">
                 <div className="row text-center">
                     {data.map((element, index) => (
@@ -62,7 +66,13 @@ const Hero = () => {
                             className="col-xl-3 col-sm-6 mb-5 d-flex"
                             key={index}
                         >
-                            <div className="cardBox bg-white rounded shadow-sm py-5 px-4">
+                            <div
+                                className={`cardBox rounded shadow-sm py-5 px-4 ${
+                                    props.color === 'light'
+                                        ? `${'bg-white '}`
+                                        : `${'bg-dark text-white '}`
+                                } `}
+                            >
                                 <a href={element.website} target="_blank">
                                     <img
                                         src={element.img}
@@ -70,9 +80,8 @@ const Hero = () => {
                                         className="img-fluid mb-3 img-thumbnail shadow-sm"
                                     />
                                 </a>
-
                                 <h5 className="mb-0">{element.title}</h5>
-                                <span className="small text-uppercase text-muted">
+                                <span className="small text-uppercase ">
                                     {element.des}
                                 </span>
                             </div>
