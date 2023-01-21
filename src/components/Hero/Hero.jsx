@@ -63,7 +63,7 @@ const Hero = () => {
                             key={index}
                         >
                             <div className="cardBox bg-white rounded shadow-sm py-5 px-4">
-                                <a href={element.website}>
+                                <a href={element.website} target="_blank">
                                     <img
                                         src={element.img}
                                         alt=""
