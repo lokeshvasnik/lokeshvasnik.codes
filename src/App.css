@@ -28,3 +28,19 @@ body {
     background: linear-gradient(to right, #e8cbc0, #636fa4);
     min-height: 100vh;
 }
+
+.profile {
+    border-radius: 100%;
+}
+
+.cardBox {
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.cardBox:hover {
+    translate: 0px -11px;
+    transition: all 0.3s ease-in-out;
+}

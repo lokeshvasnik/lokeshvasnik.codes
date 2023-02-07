@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Hero.css';
+import React, { useState, useEffect } from 'react';
 
-const Hero = (props) => {
+const Project = () => {
     const [index, setIndex] = useState(0);
     const [text, setText] = useState('');
     const [data, setData] = useState([]);
 
     // The heading animation
     const [fullText, setFullText] = useState(
-        `WELCOME TO lokesh_vasnik PROJECT SECTION.CLICK TO VIEW THE PROJECT`
+        `HERE ARE SOME PROJECTS MADE BY ME FEEL FREE TO CHECK IT OUT`
     );
 
     // Heading animation logic
@@ -49,7 +48,6 @@ const Hero = (props) => {
 
         getData();
     }, []);
-
     return (
         <>
             <div className="container py-5">
@@ -66,13 +64,7 @@ const Hero = (props) => {
                             className="col-xl-3 col-sm-6 mb-5 d-flex"
                             key={index}
                         >
-                            <div
-                                className={`cardBox rounded shadow-sm py-5 px-4 ${
-                                    props.color === 'light'
-                                        ? `${'bg-white '}`
-                                        : `${'bg-dark text-white '}`
-                                } `}
-                            >
+                            <div className="cardBox rounded shadow-sm py-5 px-4 bg-white">
                                 <a href={element.website} target="_blank">
                                     <img
                                         src={element.img}
@@ -93,4 +85,4 @@ const Hero = (props) => {
     );
 };
 
-export default Hero;
+export default Project;
