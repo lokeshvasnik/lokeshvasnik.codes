@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Project = () => {
+const Project = (props) => {
     const [index, setIndex] = useState(0);
     const [text, setText] = useState('');
     const [data, setData] = useState([]);
@@ -64,7 +64,13 @@ const Project = () => {
                             className="col-xl-3 col-sm-6 mb-5 d-flex"
                             key={index}
                         >
-                            <div className="cardBox rounded shadow-sm py-5 px-4 bg-white">
+                            <div
+                                className={`cardBox rounded shadow-sm py-5 px-4 ${
+                                    props.color === 'light'
+                                        ? `${'bg-white '}`
+                                        : `${'bg-dark text-white '}`
+                                } `}
+                            >
                                 <a href={element.website} target="_blank">
                                     <img
                                         src={element.img}
