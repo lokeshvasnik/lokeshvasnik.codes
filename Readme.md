@@ -1,7 +1,7 @@
 
 # Personal Portfolio website
 
-Till now i have changed 5+ Portfolio websites and kept as my current. I love to create websites and love to update my portfolio 
+Till now i have changed 5+ Portfolio websites and kept this as my current. I love to create websites and love to update my portfolio 
 
 
 
