@@ -1,37 +1,8 @@
-import React, { useState, useEffect } from 'react';
-
-const Project = ({ data, color }) => {
-    const [index, setIndex] = useState(0);
-    const [text, setText] = useState('');
-
-    // The heading animation
-    const [fullText, setFullText] = useState(
-        `HERE ARE SOME PROJECTS MADE BY ME FEEL FREE TO CHECK IT OUT`
-    );
-
-    // Heading animation logic
-    useEffect(() => {
-        if (index < fullText.length) {
-            const timeoutId = setTimeout(() => {
-                setText(text + fullText[index]);
-                setIndex(index + 1);
-            }, 100);
-
-            return () => {
-                clearTimeout(timeoutId);
-            };
-        }
-    }, [index]);
-
+import React from 'react';
+import { BarLoader } from 'react-spinners';
+const Project = ({ data, color, loading }) => {
     return (
         <>
-            <div className="container py-5">
-                <div className="row text-center text-white">
-                    <div className="col-lg-8 mx-auto">
-                        <p className="bg-dark lead mb-0">{text}</p>
-                    </div>
-                </div>
-            </div>
             <div className="container">
                 <div className="row text-center">
                     {data.map((element, index) => (
@@ -46,13 +17,19 @@ const Project = ({ data, color }) => {
                                         : `${'bg-dark text-white '}`
                                 } `}
                             >
-                                <a href={element.website} target="_blank">
-                                    <img
-                                        src={element.img}
-                                        alt=""
-                                        className="img-fluid mb-3 img-thumbnail shadow-sm"
-                                    />
-                                </a>
+                                <div href={element.website} target="_blank">
+                                    {loading ? (
+                                        <div className="d-flex justify-content-center align-items-center">
+                                            <BarLoader color="#36d7b7" />
+                                        </div>
+                                    ) : (
+                                        <img
+                                            src={element.img}
+                                            alt=""
+                                            className="img-fluid mb-3 img-thumbnail shadow-sm"
+                                        />
+                                    )}
+                                </div>
                                 <h5 className="mb-0">{element.title}</h5>
                                 <span className="small text-uppercase ">
                                     {element.des}
