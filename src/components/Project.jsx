@@ -4,7 +4,7 @@ import Card from './Card';
 const Project = (props) => {
     const [data, setData] = useState([]);
     const [item, setItem] = useState(data);
-
+    const [spinner, setSpinner] = useState(false);
     const menuItems = [...new Set(data.map((Val) => Val.category))];
 
     const filterItem = (curcat) => {
@@ -18,6 +18,7 @@ const Project = (props) => {
     useEffect(() => {
         const getData = async () => {
             try {
+                setSpinner(true);
                 const response = await fetch(
                     'https://projectlinkapi.up.railway.app/api',
                     {
@@ -25,29 +26,26 @@ const Project = (props) => {
                     }
                 );
 
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-
                 const data = await response.json();
                 setData(data);
+                setSpinner(false);
             } catch (error) {
                 console.error(error);
             }
         };
         getData();
-    }, []);
+    }, [item]);
 
     return (
-        <div>
+        <>
             <Button
                 data={data}
                 filterItem={filterItem}
                 setItem={setItem}
                 menuItems={menuItems}
             />
-            <Card data={item} color={props.color} />
-        </div>
+            <Card data={item} color={props.color} loading={spinner} />
+        </>
     );
 };
 
