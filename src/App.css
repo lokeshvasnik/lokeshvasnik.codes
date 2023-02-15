@@ -44,3 +44,35 @@ body {
     translate: 0px -11px;
     transition: all 0.3s ease-in-out;
 }
+
+.bg {
+    stroke: var(--accent);
+    opacity: 0.3;
+}
+
+#progress .indicator {
+    stroke: var(--accent);
+}
+
+.box {
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    background: var(--accent);
+    cursor: pointer;
+    transform: none;
+    text-align: center;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: navajowhite;
+    margin: 12px 1rem;
+}
+
+button {
+    background: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
