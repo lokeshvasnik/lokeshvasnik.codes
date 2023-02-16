@@ -1,13 +1,19 @@
+/* Google font */
+@import url('https://fonts.cdnfonts.com/css/menlo');
 /* Font Used  */
-@font-face {
-    font-family: 'Apple';
-    src: local('Apple'),
-        url(../src/fonts/HelveticaNowMicro-Regular.ttf) format('truetype');
+:root {
+    --main-color: #ffdead;
+    --pure: #fff;
+    --dark: #555;
+    --gradient-main: #e8cbc0;
+    --gradient-secondary: #636fa4;
+    --gradient-dark: #c19b8d;
 }
+
 /* Disabled the scroll bar */
 ::selection {
-    background-color: #555;
-    color: white;
+    background-color: var(--dark);
+    color: var(--pure);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -19,13 +25,21 @@
 
 /* Body */
 body {
-    font-family: 'Victor Mono';
+    font-family: 'Menlo', sans-serif;
     font-weight: 600;
-    background-color: #000;
+    background-color: var(--dark);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: #e8cbc0;
-    background: -webkit-linear-gradient(to right, #c19b8d, #636fa4);
-    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    background: var(--gradient-main);
+    background: -webkit-linear-gradient(
+        to right,
+        var(--gradient-dark),
+        var(--gradient-secondary)
+    );
+    background: linear-gradient(
+        to right,
+        var(--gradient-main),
+        var(--gradient-secondary)
+    );
     min-height: 100vh;
 }
 
@@ -55,19 +69,30 @@ body {
 }
 
 .box {
-    width: 200px;
-    height: 80px;
+    width: 10.125rem;
+    height: 2.925rem;
     border-radius: 50px;
     background: var(--accent);
     cursor: pointer;
     transform: none;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid var(--dark);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: navajowhite;
+    background: var(--main-color);
     margin: 12px 1rem;
+}
+a {
+    text-decoration: none;
+    color: var(--dark);
+}
+a:hover {
+    color: var(--dark);
+}
+
+.lead {
+    border-radius: 0.35rem;
 }
 
 button {
