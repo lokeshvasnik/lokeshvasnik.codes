@@ -20,10 +20,13 @@ const Project = ({ data, color, loading }) => {
                                 } `}
                             >
                                 <div className="d-flex justify-content-between mb-3">
-                                    <a href={element.website} target="_blank">
+                                    <a
+                                        href={element.websiteLink}
+                                        target="_blank"
+                                    >
                                         <img src={websiteIcon} alt="website" />
                                     </a>
-                                    <a href={element.github}>
+                                    <a href={element.githubLink}>
                                         <img src={githubIcon} alt="github" />
                                     </a>
                                 </div>
@@ -34,7 +37,7 @@ const Project = ({ data, color, loading }) => {
                                         </div>
                                     ) : (
                                         <img
-                                            src={element.img}
+                                            src={element.imageLink}
                                             alt=""
                                             className="img-fluid mb-3 img-thumbnail shadow-sm"
                                         />
@@ -43,7 +46,7 @@ const Project = ({ data, color, loading }) => {
                                 <div>
                                     <h5 className="mb-0">{element.title}</h5>
                                     <span className="small text-uppercase ">
-                                        {element.des}
+                                        {element.description}
                                     </span>
                                 </div>
                             </div>
