@@ -1,5 +1,7 @@
 import React from 'react';
 import { BarLoader } from 'react-spinners';
+import githubIcon from '../assets/github.svg';
+import websiteIcon from '../assets/web.svg';
 const Project = ({ data, color, loading }) => {
     return (
         <>
@@ -11,13 +13,21 @@ const Project = ({ data, color, loading }) => {
                             key={index}
                         >
                             <div
-                                className={`cardBox rounded shadow-sm py-5 px-4 ${
+                                className={`cardBox rounded shadow-sm py-3 px-4 ${
                                     color === 'light'
                                         ? `${'bg-white '}`
                                         : `${'bg-dark text-white '}`
                                 } `}
                             >
-                                <div href={element.website} target="_blank">
+                                <div className="d-flex justify-content-between mb-3">
+                                    <a href={element.website} target="_blank">
+                                        <img src={websiteIcon} alt="website" />
+                                    </a>
+                                    <a href={element.github}>
+                                        <img src={githubIcon} alt="github" />
+                                    </a>
+                                </div>
+                                <div target="_blank">
                                     {loading ? (
                                         <div className="d-flex justify-content-center align-items-center">
                                             <BarLoader color="#36d7b7" />
@@ -30,10 +40,12 @@ const Project = ({ data, color, loading }) => {
                                         />
                                     )}
                                 </div>
-                                <h5 className="mb-0">{element.title}</h5>
-                                <span className="small text-uppercase ">
-                                    {element.des}
-                                </span>
+                                <div>
+                                    <h5 className="mb-0">{element.title}</h5>
+                                    <span className="small text-uppercase ">
+                                        {element.des}
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     ))}
