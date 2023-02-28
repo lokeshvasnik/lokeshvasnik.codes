@@ -20,7 +20,7 @@ const Project = (props) => {
             try {
                 setSpinner(true);
                 const response = await fetch(
-                    'https://projectlinkapi.up.railway.app/api',
+                    'https://portfolio-website-acor.onrender.com/api',
                     {
                         method: 'GET',
                     }
