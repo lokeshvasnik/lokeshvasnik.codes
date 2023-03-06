@@ -98,3 +98,8 @@ button {
     list-style: none;
     text-decoration: none;
 }
+
+/* Github Image */
+.github {
+    box-shadow: 0 0 14px black;
+}
