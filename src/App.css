@@ -101,5 +101,6 @@ button {
 
 /* Github Image */
 .github {
-    box-shadow: 0 0 14px black;
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+    border-radius: 0.3125rem;
 }
