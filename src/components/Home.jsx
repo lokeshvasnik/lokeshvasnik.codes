@@ -7,7 +7,7 @@ const Home = () => {
                 <section>
                     <div className="row py-lg-5">
                         <div className="col-lg-6 d-flex flex-column justify-content-center ">
-                            <h1 className="fw-bold hidden">
+                            <h1 className="fw-bold">
                                 Lokesh Vasnik a Web Designer & Front-End
                                 Developer
                             </h1>
