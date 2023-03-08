@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stromsky/react-animate-on-scroll": "^2.1.8",
     "express": "^4.18.2",
     "framer-motion": "^9.0.3",
     "mongoose": "^6.8.4",
