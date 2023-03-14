@@ -6,6 +6,7 @@ import Showcase from './components/Showcase';
 import ScrollAnimation from '@stromsky/react-animate-on-scroll';
 
 import './App.css';
+import Progress from './components/Progress';
 const App = () => {
     const [theme, setTheme] = useState('light'); // light
 
@@ -16,6 +17,9 @@ const App = () => {
             <Project color={theme} />
             <ScrollAnimation animateIn="fadeIn">
                 <Showcase />
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="fadeIn">
+                <Progress />
             </ScrollAnimation>
         </>
     );
